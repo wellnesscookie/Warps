@@ -70,13 +70,11 @@ public class SignCacheManager {
      * Removes sign text from the cache
      * @param world - world
      * @param key - uuid of owner
-     * @return true if item is removed from cache
      */
-    boolean removeWarp(World world, UUID key) {
+    void removeWarp(World world, UUID key) {
         if (cachedSigns.containsKey(world)) {
-            return cachedSigns.get(world).remove(key) != null;
+            cachedSigns.get(world).remove(key);
         }
-        return false;
     }
 
 }
